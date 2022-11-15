@@ -16,12 +16,13 @@ CREATE TABLE patients
     status     VARCHAR(30)  DEFAULT 'Pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     image_url  VARCHAR(255) DEFAULT NULL,
+    swordz     FLOAT(32) DEFAULT NULL
     PRIMARY KEY (id),
     CONSTRAINT UQ_Users_Email UNIQUE (email)
 ) AUTO_INCREMENT = 1;
 
 DELIMITER //
-CREATE PROCEDURE create_and_return(IN first_name VARCHAR(255), IN last_name VARCHAR(255), IN email VARCHAR(255), IN address VARCHAR(255), IN diagnosis VARCHAR(255), IN phone VARCHAR(255), IN image_url VARCHAR(255))
+CREATE PROCEDURE create_and_return(IN first_name VARCHAR(255), IN last_name VARCHAR(255), IN email VARCHAR(255), IN address VARCHAR(255), IN diagnosis VARCHAR(255), IN phone VARCHAR(255), IN image_url VARCHAR(255), IN swordz FLOAT(32))
 BEGIN
 
     INSERT INTO patients(first_name, last_name, email, address, diagnosis, phone, image_url) VALUES (first_name, last_name, email, address, diagnosis, phone, image_url);

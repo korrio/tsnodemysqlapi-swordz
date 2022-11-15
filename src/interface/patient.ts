@@ -8,4 +8,5 @@ export interface Patient {
     diagnosis: string;
     image_url: string;
     created_at: Date;
+    swordz: number;
 }

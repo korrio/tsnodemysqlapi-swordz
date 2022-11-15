@@ -1,7 +1,10 @@
 import { Router } from 'express';
-import { createPatient, deletePatient, getPatient, getPatients, updatePatient } from '../controller/patient.controller';
+import { createPatient, deletePatient, getPatient, getPatients, updatePatient,updateSwordzPatient } from '../controller/patient.controller';
 
 const patientRoutes = Router();
+
+patientRoutes.route('/wallet/deposit')
+  .post(updateSwordzPatient);
 
 patientRoutes.route('/')
   .get(getPatients)
